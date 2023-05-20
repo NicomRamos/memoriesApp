@@ -1,8 +1,8 @@
 {
   "name": "mern-stack-client",
   "version": "0.1.0",
+  "homepage": "https://nicomramos95.github.io/MemoriesAppR/",
   "private": true,
-  "proxy": "https://memories-project-part4.herokuapp.com/",
   "dependencies": {
     "@material-ui/core": "^4.9.10",
     "@material-ui/icons": "^4.9.1",
@@ -26,6 +26,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy":"gh-pages -d build",
     "dev" :"react-scripts dev",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -54,6 +56,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "gh-pages": "^5.0.0"
   }
 }
