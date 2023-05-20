@@ -1,7 +1,6 @@
 {
   "name": "mern-stack-client",
   "version": "0.1.0",
-  "homepage": "https://nicomramos95.github.io/MemoriesAppR/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.10",
@@ -25,8 +24,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "dev": "react-scripts dev",
     "build": "react-scripts build",
     "test": "react-scripts test",
