@@ -19,7 +19,7 @@ const CreatorOrTag = () => {
     } else {
       dispatch(getPostsByCreator(name));
     }
-  }, []);
+  }, [dispatch, location, name]);
 
   if (!posts.length && !isLoading) return 'No posts';
 

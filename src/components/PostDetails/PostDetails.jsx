@@ -17,13 +17,13 @@ const Post = () => {
 
   useEffect(() => {
     dispatch(getPost(id));
-  }, [id]);
+  }, [id, dispatch]);
 
   useEffect(() => {
     if (post) {
       dispatch(getPostsBySearch({ search: 'none', tags: post?.tags.join(',') }));
     }
-  }, [post]);
+  }, [post, dispatch]);
 
   if (!post) return null;
 
@@ -44,8 +44,8 @@ const Post = () => {
       <div className={classes.card}>
         <div className={classes.section}>
           <Typography variant="h3" component="h2">{post.title}</Typography>
-          <Typography gutterBottom variant="h6" color="textSecondary" component="h2">{post.tags.map((tag) => (
-            <Link to={`/tags/${tag}`} style={{ textDecoration: 'none', color: '#3f51b5' }}>
+          <Typography gutterBottom variant="h6" color="textSecondary" component="h2">{post.tags.map((tag, index) => (
+            <Link  key={index} to={`/tags/${tag}`} style={{ textDecoration: 'none', color: '#3f51b5' }}>
               {` #${tag} `}
             </Link>
           ))}
@@ -79,7 +79,7 @@ const Post = () => {
                 <Typography gutterBottom variant="subtitle2">{name}</Typography>
                 <Typography gutterBottom variant="subtitle2">{message}</Typography>
                 <Typography gutterBottom variant="subtitle1">Likes: {likes.length}</Typography>
-                <img src={selectedFile} width="200px" />
+                <img src={selectedFile} width="200px" alt='img'/>
               </div>
             ))}
           </div>
