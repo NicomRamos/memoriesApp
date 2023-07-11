@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AppBar, Typography, Toolbar, Avatar, Button } from '@material-ui/core';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import decode from 'jwt-decode';
+// import decode from 'jwt-decode';
 
 import memoriesLogo from '../../images/memoriesLogo.png';
 import memoriesText from '../../images/memoriesText.png';
@@ -22,16 +22,17 @@ const Navbar = () => {
     history.push('/auth');
 
     setUser(null);
-  };
-
+  }; 
+  
+  // const token = user && user?.token;
   useEffect(() => {
-    const token = user?.token;
+    // const token = user?.token;
 
-    if (token) {
-      const decodedToken = decode(token);
+    // if (token) {
+      // const decodedToken = decode(token);
 
-      if (decodedToken.exp * 1000 < new Date().getTime()) logout();
-    }
+      // if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+    // }
 
     setUser(JSON.parse(localStorage.getItem('profile')));
   }, [location]);
